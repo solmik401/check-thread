@@ -75,13 +75,6 @@ convert ./image/image4.jpg -level 0,15000,0,87 ./image/image4.jpg
 convert ./image/image6.jpg -level 0,15000,0,87 ./image/image6.jpg
 convert ./image/image8.jpg -level 0,15000,0,87 ./image/image8.jpg
 
-#Вычисляем стандартное отклонение яркости, записываем в текстовые файлы
-# WidthxHeight+left+top
-#convert ./image/image2.jpg -crop 30x23+150+57 -format "%[fx:standard_deviation]" info: >./image/imagestdev2.txt
-#convert ./image/image4.jpg -crop 30x30+175+75 -format "%[fx:standard_deviation]" info: >./image/imagestdev4.txt
-#convert ./image/image6.jpg -crop 60x10+120+110 -format "%[fx:standard_deviation]" info: >./image/imagestdev6.txt
-#convert ./image/image8.jpg -crop 30x30+120+50 -format "%[fx:standard_deviation]" info: >./image/imagestdev8.txt
-
 # Направляем stdev в текстовый файл
 convert ./image/image2.jpg -crop 75x15+$x21+$y21 -format "%[fx:standard_deviation]" info: >./image/imagestdev2.txt
 convert ./image/image4.jpg -crop 105x30+$x41+$y41 -format "%[fx:standard_deviation]" info: >./image/imagestdev4.txt
@@ -222,21 +215,6 @@ cp -r ./image ./archive/$(date "+%Y%m%d_%H%M%S")
 sleep 10
 
 done
-
-# --------------------------
-
-# Ниже информация, которая может быть полезна
-
-#определить среднюю яркость изображения
-#convert ./image/image2.jpg -colorspace gray -scale 1x1! -format "%[pixel:p{0,0}]" info: > ./image/image2color.txt
-#convert ./image/image4.jpg -colorspace gray -scale 1x1! -format "%[pixel:p{0,0}]" info: > ./image/image4color.txt
-#convert ./image/image6.jpg -colorspace gray -scale 1x1! -format "%[pixel:p{0,0}]" info: > ./image/image6color.txt
-#convert ./image/image8.jpg -colorspace gray -scale 1x1! -format "%[pixel:p{0,0}]" info: > ./image/image8color.txt
-
-#эта команда показывает картинку
-#при этом программа виснет
-#если картинку закрыть, продолжает работу
-#display ./image/image2.jpg
 
 # Руководство ImageMagick
 # https://pda.coollib.cc/b/558566-ivan-georgievich-titarenko-rukovodstvo-polzovatelya-imagemagick-v-710/read#SEC_23
