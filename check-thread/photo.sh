@@ -216,5 +216,3 @@ sleep 10
 
 done
 
-# Руководство ImageMagick
-# https://pda.coollib.cc/b/558566-ivan-georgievich-titarenko-rukovodstvo-polzovatelya-imagemagick-v-710/read#SEC_23
